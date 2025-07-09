@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   Card,
@@ -58,65 +58,96 @@ export const AboutSection = () => {
   return (
       <section className="py-16 md:py-24 bg-white overflow-hidden">
         <div className="container px-4 mx-auto">
-          <div className="flex flex-col lg:flex-row gap-12 items-center">
-            {/* Left Side - Cards */}
-            <div className="w-full lg:w-1/2">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gray-900">
-                Building the Future
-              </h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-900">
+            Building the Future
+          </h2>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {items.map(({ title, description, icon: Icon, color, iconColor, rotate }, i) => (
-                    <motion.div
-                        key={i}
-                        initial={{ opacity: 0, y: 30, rotate: rotate - 4 }}
-                        whileInView={{ opacity: 1, y: 0, rotate }}
-                        transition={{ delay: i * 0.2, duration: 0.5 }}
-                        viewport={{ once: true }}
-                    >
-                      <Card className="h-full hover:rotate-0 transition-transform duration-300 transform shadow-md hover:shadow-lg">
-                        <CardHeader>
-                          <motion.div
-                              initial={{ opacity: 0, y: -10 }}
-                              whileInView={{ opacity: 1, y: 0 }}
-                              transition={{ delay: i * 0.2 + 0.1, duration: 0.4 }}
-                              className={`${color} p-3 rounded-full w-fit mb-4`}
-                          >
-                            <Icon className={`${iconColor} w-6 h-6`} />
-                          </motion.div>
-                          <CardTitle>{title}</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <CardDescription>{description}</CardDescription>
-                        </CardContent>
-                      </Card>
-                    </motion.div>
-                ))}
-              </div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+            {/* Left Side - 2 Cards */}
+            <div className="flex flex-col gap-6">
+              {items.slice(0, 2).map(({ title, description, icon: Icon, color, iconColor, rotate }, i) => (
+                  <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 30, rotate: rotate - 4 }}
+                      whileInView={{ opacity: 1, y: 0, rotate }}
+                      transition={{ delay: i * 0.2, duration: 0.5 }}
+                      viewport={{ once: true }}
+                  >
+                    <Card className="h-full rounded-none border border-gray-200 shadow-none hover:shadow-md transition-shadow duration-300">
+                      <CardHeader className="p-5 rounded-none">
+                        <motion.div
+                            initial={{ opacity: 0, y: -10 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: i * 0.2 + 0.1, duration: 0.4 }}
+                            className={`${color} p-2 inline-flex items-center justify-center w-10 h-10 ${iconColor}`}
+                            style={{ clipPath: "polygon(0 0, 100% 0%, 100% 100%, 0% 100%)" }}
+                        >
+                          <Icon className="w-6 h-6" />
+                        </motion.div>
+                        <CardTitle className="mt-4">{title}</CardTitle>
+                      </CardHeader>
+                      <CardContent className="pt-0 px-5 pb-5 rounded-none">
+                        <CardDescription>{description}</CardDescription>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+              ))}
             </div>
 
-            {/* Right Side - Image */}
-            <div className="w-full lg:w-1/2">
+            {/* Center - Image */}
+            <div className="flex justify-center">
               <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.6, duration: 0.5 }}
                   viewport={{ once: true }}
-                  className="relative rounded-xl overflow-hidden shadow-lg aspect-[4/5]"
+                  className="relative overflow-hidden shadow-lg border border-gray-300 aspect-[3/4] max-w-sm w-full"
+                  style={{ borderRadius: "0px" }}
               >
                 <img
-                    src="/images/cement-factory.jpg"
+                    src="/images/about.jpg"
                     alt="Our modern cement production facility"
                     className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 via-transparent" />
-                <div className="absolute bottom-0 left-0 p-8 text-white">
-                  <h3 className="text-2xl font-bold mb-2">Since 1985</h3>
-                  <p className="text-gray-200">
+                <div className="absolute bottom-0 left-0 p-6 text-white">
+                  <h3 className="text-2xl font-bold mb-1">Since 1985</h3>
+                  <p className="text-gray-200 text-sm">
                     Delivering construction excellence for nearly four decades
                   </p>
                 </div>
               </motion.div>
+            </div>
+
+            {/* Right Side - 2 Cards */}
+            <div className="flex flex-col gap-6">
+              {items.slice(2).map(({ title, description, icon: Icon, color, iconColor, rotate }, i) => (
+                  <motion.div
+                      key={i + 2}
+                      initial={{ opacity: 0, y: 30, rotate: rotate - 4 }}
+                      whileInView={{ opacity: 1, y: 0, rotate }}
+                      transition={{ delay: (i + 2) * 0.2, duration: 0.5 }}
+                      viewport={{ once: true }}
+                  >
+                    <Card className="h-full rounded-none border border-gray-200 shadow-none hover:shadow-md transition-shadow duration-300">
+                      <CardHeader className="p-5 rounded-none">
+                        <motion.div
+                            initial={{ opacity: 0, y: -10 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: (i + 2) * 0.2 + 0.1, duration: 0.4 }}
+                            className={`${color} p-2 inline-flex items-center justify-center w-10 h-10 ${iconColor}`}
+                            style={{ clipPath: "polygon(0 0, 100% 0%, 100% 100%, 0% 100%)" }}
+                        >
+                          <Icon className="w-6 h-6" />
+                        </motion.div>
+                        <CardTitle className="mt-4">{title}</CardTitle>
+                      </CardHeader>
+                      <CardContent className="pt-0 px-5 pb-5 rounded-none">
+                        <CardDescription>{description}</CardDescription>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+              ))}
             </div>
           </div>
         </div>
