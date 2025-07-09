@@ -113,7 +113,7 @@ export const AboutSection = () => {
                 <div className="absolute bottom-0 left-0 p-6 text-white">
                   <h3 className="text-2xl font-bold mb-1">Since 1985</h3>
                   <p className="text-gray-200 text-sm">
-                    Delivering construction excellence for nearly four decades
+                    With over 10 years of experience in the construction industry, we are committed to delivering high-quality materials and services. Our core values of integrity, safety, and innovation drive us to exceed client expectations.
                   </p>
                 </div>
               </motion.div>
