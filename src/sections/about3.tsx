@@ -24,7 +24,8 @@ export const AboutSection = () => {
       icon: Construction,
       color: "bg-amber-100",
       iconColor: "text-amber-600",
-      rotate: -3,
+      bgColor: "bg-amber-50",
+      rotate: 0,
     },
     {
       title: "Our Vision",
@@ -33,32 +34,34 @@ export const AboutSection = () => {
       icon: Globe,
       color: "bg-blue-100",
       iconColor: "text-blue-600",
-      rotate: 2,
+      bgColor: "bg-blue-50",
+      rotate: 0,
     },
     {
       title: "Our Values",
       description:
           "Quality, integrity, innovation, and environmental responsibility guide every decision we make.",
       icon: ShieldCheck,
-      color: "bg-green-100",
-      iconColor: "text-green-600",
-      rotate: 4,
+      color: "bg-stone-100",
+      iconColor: "text-stone-600",
+      bgColor: "bg-stone-50",
+      rotate: 0,
     },
     {
       title: "Sustainability",
       description:
           "Reducing our carbon footprint by 25% by 2030 through innovative production methods.",
       icon: Leaf,
-      color: "bg-emerald-100",
-      iconColor: "text-emerald-600",
-      rotate: -2,
+      color: "bg-lime-100",
+      iconColor: "text-lime-600",
+      bgColor: "bg-lime-50",
+      rotate: 0,
     },
   ];
 
   return (
-
       <section className="py-16 md:py-24 bg-white overflow-hidden">
-        <div className="container px-4 mx-auto">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-900">
             Building the Future
           </h2>
@@ -66,7 +69,7 @@ export const AboutSection = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
             {/* Left Side - 2 Cards */}
             <div className="flex flex-col gap-6">
-              {items.slice(0, 2).map(({ title, description, icon: Icon, color, iconColor, rotate }, i) => (
+              {items.slice(0, 2).map(({ title, description, icon: Icon, color, iconColor, bgColor, rotate }, i) => (
                   <motion.div
                       key={i}
                       initial={{ opacity: 0, y: 30, rotate: rotate - 4 }}
@@ -74,7 +77,7 @@ export const AboutSection = () => {
                       transition={{ delay: i * 0.2, duration: 0.5 }}
                       viewport={{ once: true }}
                   >
-                    <Card className="h-full rounded-md border border-gray-200 shadow-none hover:shadow-md transition-shadow duration-300">
+                    <Card className={`h-full rounded-md border border-gray-200 shadow-none hover:shadow-md transition-shadow duration-300 ${bgColor}`}>
                       <CardHeader className="p-5 rounded-md">
                         <motion.div
                             initial={{ opacity: 0, y: -10 }}
@@ -90,12 +93,11 @@ export const AboutSection = () => {
                         <CardDescription>{description}</CardDescription>
                       </CardContent>
                     </Card>
-
                   </motion.div>
               ))}
             </div>
 
-            {/* Center - Image */}
+            {/* Center Image */}
             <div className="flex justify-center">
               <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
@@ -109,7 +111,7 @@ export const AboutSection = () => {
                     alt="Our modern cement production facility"
                     className="w-full h-full object-cover rounded-md"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 via-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/40 to-transparent" />
                 <div className="absolute bottom-0 left-0 p-6 text-white">
                   <h3 className="text-2xl font-bold mb-1">Since 1985</h3>
                   <p className="text-gray-200 text-sm">
@@ -117,12 +119,11 @@ export const AboutSection = () => {
                   </p>
                 </div>
               </motion.div>
-
             </div>
 
             {/* Right Side - 2 Cards */}
             <div className="flex flex-col gap-6">
-              {items.slice(2).map(({ title, description, icon: Icon, color, iconColor, rotate }, i) => (
+              {items.slice(2).map(({ title, description, icon: Icon, color, iconColor, bgColor, rotate }, i) => (
                   <motion.div
                       key={i + 2}
                       initial={{ opacity: 0, y: 30, rotate: rotate - 4 }}
@@ -130,7 +131,7 @@ export const AboutSection = () => {
                       transition={{ delay: (i + 2) * 0.2, duration: 0.5 }}
                       viewport={{ once: true }}
                   >
-                    <Card className="h-full rounded-md border border-gray-200 shadow-none hover:shadow-md transition-shadow duration-300">
+                    <Card className={`h-full rounded-md border border-gray-200 shadow-none hover:shadow-md transition-shadow duration-300 ${bgColor}`}>
                       <CardHeader className="p-5 rounded-md">
                         <motion.div
                             initial={{ opacity: 0, y: -10 }}
@@ -146,7 +147,6 @@ export const AboutSection = () => {
                         <CardDescription>{description}</CardDescription>
                       </CardContent>
                     </Card>
-
                   </motion.div>
               ))}
             </div>

@@ -80,7 +80,7 @@ export default function HeroSection() {
                 >
                     <div className="bg-white p-3 rounded-2xl shadow-lg transform hover:rotate-0 transition-transform duration-300">
                         <img
-                            src={src}
+                            src="/images/about.jpg"
                             alt="Floating card"
                             width={width}
                             height={height}
