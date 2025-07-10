@@ -22,9 +22,9 @@ export const InfoSection = () => {
       description:
           "To provide high-quality cement products that form the foundation for durable, sustainable infrastructure worldwide.",
       icon: Construction,
-      color: "bg-amber-100",
-      iconColor: "text-amber-600",
-      bgColor: "bg-amber-50",
+      color: "bg-[#D4A89C]/20",
+      iconColor: "text-[#D4A89C]",
+      bgColor: "bg-white/90",
       rotate: 0,
     },
     {
@@ -32,9 +32,9 @@ export const InfoSection = () => {
       description:
           "To be the most trusted cement manufacturer, innovating for a greener construction future.",
       icon: Globe,
-      color: "bg-blue-100",
-      iconColor: "text-blue-600",
-      bgColor: "bg-blue-50",
+      color: "bg-[#A2C5E0]/20",
+      iconColor: "text-[#A2C5E0]",
+      bgColor: "bg-white/90",
       rotate: 0,
     },
     {
@@ -42,9 +42,9 @@ export const InfoSection = () => {
       description:
           "Quality, integrity, innovation, and environmental responsibility guide every decision we make.",
       icon: ShieldCheck,
-      color: "bg-stone-100",
-      iconColor: "text-stone-600",
-      bgColor: "bg-stone-50",
+      color: "bg-[#A8C3B0]/20",
+      iconColor: "text-[#A8C3B0]",
+      bgColor: "bg-white/90",
       rotate: 0,
     },
     {
@@ -52,17 +52,17 @@ export const InfoSection = () => {
       description:
           "Reducing our carbon footprint by 25% by 2030 through innovative production methods.",
       icon: Leaf,
-      color: "bg-lime-100",
-      iconColor: "text-lime-600",
-      bgColor: "bg-lime-50",
+      color: "bg-[#E8D0C1]/20",
+      iconColor: "text-[#E8D0C1]",
+      bgColor: "bg-white/90",
       rotate: 0,
     },
   ];
 
   return (
-      <section className="py-16 md:py-24 bg-white bg-[url('/images/concrete-texture.png')] bg-opacity-5">
+      <section className="py-16 md:py-24 bg-[#F7F5F0] bg-[url('/images/concrete-texture.png')] bg-opacity-10">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-900">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-[#4A4D4B]">
             Building the Future
           </h2>
 
@@ -77,7 +77,7 @@ export const InfoSection = () => {
                       transition={{ delay: i * 0.2, duration: 0.5 }}
                       viewport={{ once: true }}
                   >
-                    <Card className={`h-full rounded-md border border-gray-200 shadow-none hover:shadow-md transition-shadow duration-300 ${bgColor}`}>
+                    <Card className={`h-full rounded-md border border-[#E8D0C1]/30 shadow-none hover:shadow-sm transition-shadow duration-300 ${bgColor}`}>
                       <CardHeader className="p-5 rounded-md">
                         <motion.div
                             initial={{ opacity: 0, y: -10 }}
@@ -87,10 +87,10 @@ export const InfoSection = () => {
                         >
                           <Icon className="w-6 h-6" />
                         </motion.div>
-                        <CardTitle className="mt-4">{title}</CardTitle>
+                        <CardTitle className="mt-4 text-[#4A4D4B]">{title}</CardTitle>
                       </CardHeader>
                       <CardContent className="pt-0 px-5 pb-5 rounded-md">
-                        <CardDescription>{description}</CardDescription>
+                        <CardDescription className="text-[#4A4D4B]/80">{description}</CardDescription>
                       </CardContent>
                     </Card>
                   </motion.div>
@@ -104,17 +104,17 @@ export const InfoSection = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.6, duration: 0.5 }}
                   viewport={{ once: true }}
-                  className="relative overflow-hidden shadow-lg border border-gray-300 aspect-[3/4] max-w-sm w-full rounded-md"
+                  className="relative overflow-hidden shadow-sm border border-[#E8D0C1]/30 aspect-[3/4] max-w-sm w-full rounded-md"
               >
                 <img
                     src="/images/about.jpg"
                     alt="Our modern cement production facility"
                     className="w-full h-full object-cover rounded-md"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#4A4D4B]/80 via-[#4A4D4B]/40 to-transparent" />
                 <div className="absolute bottom-0 left-0 p-6 text-white">
                   <h3 className="text-2xl font-bold mb-1">Since 1985</h3>
-                  <p className="text-gray-200 text-sm">
+                  <p className="text-[#F7F5F0] text-sm">
                     With over 10 years of experience in the construction industry, we are committed to delivering high-quality materials and services. Our core values of integrity, safety, and innovation drive us to exceed client expectations.
                   </p>
                 </div>
@@ -131,7 +131,7 @@ export const InfoSection = () => {
                       transition={{ delay: (i + 2) * 0.2, duration: 0.5 }}
                       viewport={{ once: true }}
                   >
-                    <Card className={`h-full rounded-md border border-gray-200 shadow-none hover:shadow-md transition-shadow duration-300 ${bgColor}`}>
+                    <Card className={`h-full rounded-md border border-[#E8D0C1]/30 shadow-none hover:shadow-sm transition-shadow duration-300 ${bgColor}`}>
                       <CardHeader className="p-5 rounded-md">
                         <motion.div
                             initial={{ opacity: 0, y: -10 }}
@@ -141,10 +141,10 @@ export const InfoSection = () => {
                         >
                           <Icon className="w-6 h-6" />
                         </motion.div>
-                        <CardTitle className="mt-4">{title}</CardTitle>
+                        <CardTitle className="mt-4 text-[#4A4D4B]">{title}</CardTitle>
                       </CardHeader>
                       <CardContent className="pt-0 px-5 pb-5 rounded-md">
-                        <CardDescription>{description}</CardDescription>
+                        <CardDescription className="text-[#4A4D4B]/80">{description}</CardDescription>
                       </CardContent>
                     </Card>
                   </motion.div>
