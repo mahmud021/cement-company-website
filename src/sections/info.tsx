@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 
-export const AboutSection = () => {
+export const InfoSection = () => {
   const items = [
     {
       title: "Our Mission",
@@ -60,7 +60,7 @@ export const AboutSection = () => {
   ];
 
   return (
-      <section className="py-16 md:py-24 bg-white overflow-hidden">
+      <section className="py-16 md:py-24 bg-white bg-[url('/images/concrete-texture.png')] bg-opacity-5">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-900">
             Building the Future
