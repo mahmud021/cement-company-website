@@ -1,8 +1,9 @@
 "use client"
 
 import { Folder, Users, Grid3X3 } from "lucide-react"
-import { motion } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { SectionBackground } from "../components/backgrounds";
+import { useEffect, useState } from "react";
 
 export default function HeroSection() {
     const heading = "Your Trusted Partner in Concrete Supply.".split(" ")
@@ -16,11 +17,61 @@ export default function HeroSection() {
         { src: "/placeholder.svg?height=125&width=145", className: "bottom-20 right-16 md:right-28", rotate: -6, width: 145, height: 125 },
     ]
 
+    // State to track mobile view
+    const [isMobile, setIsMobile] = useState(false)
+
+    useEffect(() => {
+        // Check if window is defined (client-side)
+        if (typeof window !== 'undefined') {
+            const checkMobile = () => {
+                setIsMobile(window.innerWidth <= 768)
+            }
+
+            // Initial check
+            checkMobile()
+            // Add resize listener
+            window.addEventListener('resize', checkMobile)
+
+            return () => window.removeEventListener('resize', checkMobile)
+        }
+    }, [])
+
     return (
         <SectionBackground variant="hero">
             <section className="min-h-screen bg-[#F7F5F0] flex items-center justify-center px-4 py-16 relative overflow-hidden">
-                {/* Central Content */}
+                {/* Floating Image Cards - Moved to the bottom so they render behind text */}
+                {cards.map(({ src, className, rotate, width, height }, index) => (
+                    <motion.div
+                        key={index}
+                        initial={{ opacity: 0, rotate: rotate - 5, y: 20 }}
+                        animate={{ opacity: 1, rotate, y: 0 }}
+                        transition={{ delay: 1.4 + index * 0.2, duration: 0.5 }}
+                        className={`absolute ${className} z-0`}
+                    >
+                        <div className="bg-[#F7F5F0] border-2 border-[#E8D0C1] p-3 rounded-2xl shadow-lg transform hover:rotate-0 transition-transform duration-300">
+                            <img
+                                src="/images/about.jpg"
+                                alt="Concrete project"
+                                width={width}
+                                height={height}
+                                className="rounded-xl object-cover"
+                            />
+                        </div>
+                    </motion.div>
+                ))}
+
+                {/* Central Content with Blur Effect */}
                 <div className="text-center max-w-4xl z-10 relative">
+                    {/* Blur overlay - only on mobile when cards overlap */}
+                    {isMobile && (
+                        <motion.div
+                            className="absolute inset-0 bg-[#F7F5F0]/80 backdrop-blur-sm rounded-xl -z-10"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 0.3 }}
+                        />
+                    )}
+
                     {/* Top Icons */}
                     <motion.div
                         initial={{ opacity: 0, y: -20 }}
@@ -42,7 +93,7 @@ export default function HeroSection() {
                     </motion.div>
 
                     {/* Animated Heading */}
-                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#4A4D4B] mb-6 leading-tight">
+                    <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-[#4A4D4B] mb-6 leading-tight">
                         {heading.map((word, index) => (
                             <motion.span
                                 key={index}
@@ -61,34 +112,13 @@ export default function HeroSection() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 1.2, duration: 0.6 }}
-                        className="text-[#4A4D4B]/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
+                        className="text-[#4A4D4B]/80 text-base md:text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed"
                     >
                         Delivering high-quality ready-mix concrete for projects of all sizes.
-                        <br />
+                        <br className="hidden sm:block" />
                         From residential foundations to large-scale commercial developments, we ensure reliability and performance.
                     </motion.p>
                 </div>
-
-                {/* Floating Image Cards */}
-                {cards.map(({ src, className, rotate, width, height }, index) => (
-                    <motion.div
-                        key={index}
-                        initial={{ opacity: 0, rotate: rotate - 5, y: 20 }}
-                        animate={{ opacity: 1, rotate, y: 0 }}
-                        transition={{ delay: 1.4 + index * 0.2, duration: 0.5 }}
-                        className={`absolute ${className}`}
-                    >
-                        <div className="bg-[#F7F5F0] border-2 border-[#E8D0C1] p-3 rounded-2xl shadow-lg transform hover:rotate-0 transition-transform duration-300">
-                            <img
-                                src="/images/about.jpg"
-                                alt="Concrete project"
-                                width={width}
-                                height={height}
-                                className="rounded-xl object-cover"
-                            />
-                        </div>
-                    </motion.div>
-                ))}
 
                 {/* Primary Accent Circle */}
                 <motion.div
