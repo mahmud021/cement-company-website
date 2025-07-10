@@ -2,6 +2,7 @@
 
 import { Folder, Users, Grid3X3 } from "lucide-react"
 import { motion } from "framer-motion"
+import {SectionBackground} from "../components/backgrounds";
 
 export default function HeroSection() {
     const heading = "Your Trusted Partner in Concrete Supply.".split(" ")
@@ -16,6 +17,7 @@ export default function HeroSection() {
     ]
 
     return (
+        <SectionBackground variant="hero">
         <section className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-16 relative overflow-hidden">
             {/* Central Content */}
             <div className="text-center max-w-4xl z-10 relative">
@@ -104,5 +106,6 @@ export default function HeroSection() {
                 className="absolute top-16 right-1/3 w-6 h-6 bg-yellow-200 rounded-full opacity-60"
             />
         </section>
+        </SectionBackground>
     )
 }

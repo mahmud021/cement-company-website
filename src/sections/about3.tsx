@@ -56,6 +56,7 @@ export const AboutSection = () => {
   ];
 
   return (
+
       <section className="py-16 md:py-24 bg-white overflow-hidden">
         <div className="container px-4 mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-900">
@@ -73,23 +74,23 @@ export const AboutSection = () => {
                       transition={{ delay: i * 0.2, duration: 0.5 }}
                       viewport={{ once: true }}
                   >
-                    <Card className="h-full rounded-none border border-gray-200 shadow-none hover:shadow-md transition-shadow duration-300">
-                      <CardHeader className="p-5 rounded-none">
+                    <Card className="h-full rounded-md border border-gray-200 shadow-none hover:shadow-md transition-shadow duration-300">
+                      <CardHeader className="p-5 rounded-md">
                         <motion.div
                             initial={{ opacity: 0, y: -10 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: i * 0.2 + 0.1, duration: 0.4 }}
-                            className={`${color} p-2 inline-flex items-center justify-center w-10 h-10 ${iconColor}`}
-                            style={{ clipPath: "polygon(0 0, 100% 0%, 100% 100%, 0% 100%)" }}
+                            className={`${color} p-2 inline-flex items-center justify-center w-10 h-10 ${iconColor} rounded-md`}
                         >
                           <Icon className="w-6 h-6" />
                         </motion.div>
                         <CardTitle className="mt-4">{title}</CardTitle>
                       </CardHeader>
-                      <CardContent className="pt-0 px-5 pb-5 rounded-none">
+                      <CardContent className="pt-0 px-5 pb-5 rounded-md">
                         <CardDescription>{description}</CardDescription>
                       </CardContent>
                     </Card>
+
                   </motion.div>
               ))}
             </div>
@@ -101,13 +102,12 @@ export const AboutSection = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.6, duration: 0.5 }}
                   viewport={{ once: true }}
-                  className="relative overflow-hidden shadow-lg border border-gray-300 aspect-[3/4] max-w-sm w-full"
-                  style={{ borderRadius: "0px" }}
+                  className="relative overflow-hidden shadow-lg border border-gray-300 aspect-[3/4] max-w-sm w-full rounded-md"
               >
                 <img
                     src="/images/about.jpg"
                     alt="Our modern cement production facility"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover rounded-md"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 via-transparent" />
                 <div className="absolute bottom-0 left-0 p-6 text-white">
@@ -117,6 +117,7 @@ export const AboutSection = () => {
                   </p>
                 </div>
               </motion.div>
+
             </div>
 
             {/* Right Side - 2 Cards */}
@@ -129,23 +130,23 @@ export const AboutSection = () => {
                       transition={{ delay: (i + 2) * 0.2, duration: 0.5 }}
                       viewport={{ once: true }}
                   >
-                    <Card className="h-full rounded-none border border-gray-200 shadow-none hover:shadow-md transition-shadow duration-300">
-                      <CardHeader className="p-5 rounded-none">
+                    <Card className="h-full rounded-md border border-gray-200 shadow-none hover:shadow-md transition-shadow duration-300">
+                      <CardHeader className="p-5 rounded-md">
                         <motion.div
                             initial={{ opacity: 0, y: -10 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: (i + 2) * 0.2 + 0.1, duration: 0.4 }}
-                            className={`${color} p-2 inline-flex items-center justify-center w-10 h-10 ${iconColor}`}
-                            style={{ clipPath: "polygon(0 0, 100% 0%, 100% 100%, 0% 100%)" }}
+                            transition={{ delay: i * 0.2 + 0.1, duration: 0.4 }}
+                            className={`${color} p-2 inline-flex items-center justify-center w-10 h-10 ${iconColor} rounded-md`}
                         >
                           <Icon className="w-6 h-6" />
                         </motion.div>
                         <CardTitle className="mt-4">{title}</CardTitle>
                       </CardHeader>
-                      <CardContent className="pt-0 px-5 pb-5 rounded-none">
+                      <CardContent className="pt-0 px-5 pb-5 rounded-md">
                         <CardDescription>{description}</CardDescription>
                       </CardContent>
                     </Card>
+
                   </motion.div>
               ))}
             </div>
