@@ -1,17 +1,17 @@
 // @ts-ignore
 import HeroSection from "@/sections/Hero";
-import {WhyWeStandOutSection} from "../sections/WhyWeStandOutSection.tsx";
-import {TestHero} from "../sections/TestHero.tsx";
 import {InfoSection} from "../sections/info.tsx";
-import AboutSection from "../sections/About.tsx"; // ← default import
+import AboutSection from "../sections/About.tsx";
+import {FeaturesSection} from "../sections/Feature.tsx";
+import {TeamSection} from "../sections/Team.tsx";
 export function Home() {
     return (
         <div className="bg-white text-gray-900">
             <HeroSection/>
             <InfoSection/>
             <AboutSection/>
-            <WhyWeStandOutSection/>
-            <TestHero/>
+            <FeaturesSection/>
+            <TeamSection/>
         </div>
     )
 }
