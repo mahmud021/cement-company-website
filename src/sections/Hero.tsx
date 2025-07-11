@@ -9,13 +9,14 @@ export default function HeroSection() {
     const heading = "Your Trusted Partner in Concrete Supply.".split(" ")
 
     const cards = [
-        { src: "/placeholder.svg?height=120&width=160", className: "top-20 left-8 md:left-16 lg:left-24", rotate: -6, width: 160, height: 120 },
-        { src: "/placeholder.svg?height=100&width=140", className: "top-32 right-8 md:right-16 lg:right-24", rotate: 3, width: 140, height: 100 },
-        { src: "/placeholder.svg?height=140&width=120", className: "top-1/2 left-4 md:left-12 -translate-y-1/2", rotate: 6, width: 120, height: 140 },
-        { src: "/placeholder.svg?height=130&width=150", className: "top-1/2 right-4 md:right-12 -translate-y-1/2", rotate: -3, width: 150, height: 130 },
-        { src: "/placeholder.svg?height=110&width=130", className: "bottom-32 left-12 md:left-20", rotate: 12, width: 130, height: 110 },
-        { src: "/placeholder.svg?height=125&width=145", className: "bottom-20 right-16 md:right-28", rotate: -6, width: 145, height: 125 },
+        { src: "/placeholder.svg", className: "top-16 left-4 md:left-16 lg:left-24", rotate: -6, width: 220, height: 160 },
+        { src: "/placeholder.svg", className: "top-28 right-4 md:right-16 lg:right-24", rotate: 3, width: 200, height: 140 },
+        { src: "/placeholder.svg", className: "top-1/2 left-2 md:left-10 -translate-y-1/2", rotate: 6, width: 200, height: 180 },
+        { src: "/placeholder.svg", className: "top-1/2 right-2 md:right-10 -translate-y-1/2", rotate: -3, width: 200, height: 180 },
+        { src: "/placeholder.svg", className: "bottom-24 left-6 md:left-20", rotate: 12, width: 190, height: 150 },
+        { src: "/placeholder.svg", className: "bottom-16 right-12 md:right-28", rotate: -6, width: 200, height: 160 },
     ]
+
 
     // State to track mobile view
     const [isMobile, setIsMobile] = useState(false)
